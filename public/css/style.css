@@ -1,0 +1,31 @@
+
+.modal-background {
+    background-color:rgba(0, 0, 0, 0.8);
+}
+
+.card {
+    /* background-color:rgba(12, 20, 29, 0.5); */
+    background-image: url(../images/modal-BG.svg);
+    color: aliceblue;
+
+    border-radius: 20px;
+    font-weight: bolder;
+}
+
+
+.login-input {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-style: none;
+    
+}
+
+.login-button, .cancel-button {
+    border-radius: 10px;
+}
+
+.modal-img {
+    color:rgb(247, 91, 49);
+}
