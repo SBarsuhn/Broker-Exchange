@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const User = require('../models/user');
+const checkLogin = require('../utils/auth')
 
-// router.get('/', async (req, res) => {
+// router.get('/', checkLogin, async (req, res) => {
 //     if (req.session.loggedIn) {
 //         const loggedUser = 
 //     } else {
