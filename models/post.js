@@ -41,7 +41,7 @@ Post.init(
     },
     closed_date: {
         type: DataTypes.DATEONLY,
-        allowNull: false,
+        allowNull: true,
     },
     post_date: {
       type: DataTypes.DATEONLY,
