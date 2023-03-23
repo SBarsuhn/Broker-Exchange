@@ -4,10 +4,7 @@
 }
 
 .card {
-    /* background-color:rgba(12, 20, 29, 0.5); */
     background-image: url(../images/modal-BG.svg);
-    color: aliceblue;
-
     border-radius: 20px;
     font-weight: bolder;
 }
@@ -22,10 +19,32 @@
     
 }
 
-.login-button, .cancel-button {
+.login-button {
     border-radius: 10px;
+    margin-top: 35px !important;
+    border-color: transparent;
+    border-style:solid
 }
 
-.modal-img {
+.login-button:hover {
+  background-color: rgb(247, 91, 49) !important;
+  border-color: rgb(204, 204, 204) !important;
+  border-style:solid;
+}
+
+.modal-img, .orange {
     color:rgb(247, 91, 49);
+}
+.close-modal {
+    color: rgb(204, 204, 204);
+    transition: transform .7s ease-in-out;
+}
+
+.close-modal:hover {
+    background-color: transparent !important;
+    transform: rotate(360deg);
+}
+
+.black {
+    color: black !important;
 }
