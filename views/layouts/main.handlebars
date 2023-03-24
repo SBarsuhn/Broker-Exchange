@@ -14,13 +14,13 @@
       {{#if logged_in}}
       <div class="w3-top">
         <div class="w3-bar w3-black">
-            <a href="#" class="w3-bar-item w3-button w3-mobile">Community Forum</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">Make A Post</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">My Profile</a>
+            <a href="/views/homepage.handlebars" class="w3-bar-item w3-button w3-mobile">Community Forum</a>
+            <a href="/views/" class="w3-bar-item w3-button w3-mobile">Make A Post</a>
+            <a href="/views/" class="w3-bar-item w3-button w3-mobile">My Profile</a>
             <a href="#" class="w3-bar-item w3-button w3-mobile">Logout</a>
         </div>
     </div>
-        <a href="/community-forum">Community Forum</a> |
+        <a href="/views/homepage.handlebars">Community Forum</a> |
         {{else}}
         <p>Please login to view or post exchanges.</p>
         <!-- renders the login modal pop up -->
@@ -54,7 +54,7 @@
     </header>
     <!-- renders the sub layout -->
     <main>
-        {{{ body }}}
+
     </main>
     
     <footer>
