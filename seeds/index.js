@@ -3,26 +3,29 @@ const sequelize = require("../config/connection");
 const seedUsers = require("./userData");
 const seedPosts = require("./postData");
 const seedCategories = require("./categoryData");
-const seedThreads = require('./threadData');
+const seedThreads = require("./threadData");
 
-const seedAll = async ()=>{
-    await sequelize.sync({force: true});
+const seedAll = async () => {
+  try {
+    await sequelize.sync({ force: true });
     console.log("\n DATABASE SYNCED \n");
 
     await seedUsers();
     console.log("\n USERS SEEDED \n");
 
+    await seedCategories();
+    console.log("\n CATEGORIES SEEDED \n");
+
     await seedPosts();
     console.log("\n POSTS SEEDED \n");
 
-    await seedCategories();
-    console.log("\n CATEGORIES SEEDED \n");
-    
     await seedThreads();
     console.log("\n THREADS SEEDED \n");
 
-
-    process.exit(0);
+    // process.exit(0);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 seedAll();

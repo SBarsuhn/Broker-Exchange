@@ -39,7 +39,7 @@ const categoryData = [
 },
 {
     "category": "Walk Pets"
-}
+},
 ];
 
 const seedCategories = () => Category.bulkCreate(categoryData);
