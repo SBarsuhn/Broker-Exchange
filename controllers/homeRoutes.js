@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
                     },
                     {
                         model: Thread,
-                        attributes: ['thread', 'thread_offer', 'user_id']
+                        attributes: ['thread', 'counter_offer', 'user_id']
                     }
                 ]
             });
