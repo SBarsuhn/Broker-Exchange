@@ -1,6 +1,6 @@
 const checkLogin = (req, res, next) => {
     if (!req.session.loggedIn) {
-        res.redirect('/createUser')
+        res.redirect('/')
     } else {
         next()
     }
