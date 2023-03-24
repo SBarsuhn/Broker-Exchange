@@ -24,20 +24,20 @@ Post.init(
       allowNull: false,
     },
     offer: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     need: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     post: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
     closed_date: {
-        type: DataTypes.DATEONLY,
-        allowNull: true,
+      type: DataTypes.DATEONLY,
+      allowNull: true,
     },
     post_date: {
       type: DataTypes.DATEONLY,
@@ -47,16 +47,8 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'category',
-        key: 'id',
-      },
-    },
-    thread_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'thread',
-        key: 'id',
+        model: "category",
+        key: "id",
       },
     },
   },

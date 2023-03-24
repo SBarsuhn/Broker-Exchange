@@ -29,6 +29,9 @@ Thread.belongsTo(User, {
   foreignKey: "user_id",
 });
 
+Thread.belongsTo(Post, {
+  foreignKey: 'post_id',
+});
 
 
 
