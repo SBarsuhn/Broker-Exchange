@@ -13,8 +13,25 @@ router.get('/', checkLogin, async (req, res) => {
         })
 })
 
-router.post('/', async (req, res) => {
-    
-})
+router.post('/login', async (req, res) => {
+    try {
+
+
+
+        req.session.save(() => {
+            req.session.loggedIn = true;
+            res.status(200).json({ 
+                name: varName, 
+                description: varDescription,
+                address: varAddress,
+                time_frame: varTimeFrame,
+                request: varRequest,
+            });
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+});
 
 module.exports = router;
