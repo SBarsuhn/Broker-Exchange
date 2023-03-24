@@ -45,11 +45,20 @@ Post.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'categories',
         key: 'id',
       },
-    }
+    },
+    thread_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'thread',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
