@@ -1,6 +1,6 @@
 const User = require("./user");
 const Post = require("./post");
-const Categories = require("./categories");
+const Category = require("./category");
 const Thread = require("./thread");
 
 User.hasMany(Post, {
@@ -16,12 +16,12 @@ Post.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-Post.hasOne(Categories, {
+Post.hasOne(Category, {
   foreignKey: "category_id",
 });
 
 
-Categories.hasMany(Post, {
+Category.hasMany(Post, {
   foreignKey: "category_id",
 });
 

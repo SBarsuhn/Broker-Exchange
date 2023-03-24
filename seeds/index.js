@@ -2,7 +2,7 @@ const sequelize = require("../config/connection");
 
 const seedUsers = require("./userData");
 const seedPosts = require("./postData");
-const seedCategories = require("./categoriesData");
+const seedCategories = require("./categoryData");
 const seedThreads = require('./threadData');
 
 const seedAll = async ()=>{
