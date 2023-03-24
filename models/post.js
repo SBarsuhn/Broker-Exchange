@@ -35,13 +35,9 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    thread: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
     closed_date: {
         type: DataTypes.DATEONLY,
-        allowNull: false,
+        allowNull: true,
     },
     post_date: {
       type: DataTypes.DATEONLY,
@@ -49,11 +45,20 @@ Post.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'categories',
         key: 'id',
       },
-    }
+    },
+    thread_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'thread',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
