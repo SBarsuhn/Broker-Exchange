@@ -13,7 +13,7 @@ Thread.init(
     },
     thread : {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
     },
     counter_offer: {
         type: DataTypes.STRING,
@@ -25,6 +25,13 @@ Thread.init(
         references: {
             model: "user",
             key: "id",
+        },
+    },
+    post_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'post',
+            key: 'id',
         },
     },
 },
