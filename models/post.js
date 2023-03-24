@@ -27,7 +27,7 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    Need: {
+    need: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -47,7 +47,7 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'categories',
+        model: 'category',
         key: 'id',
       },
     },
