@@ -22,7 +22,7 @@ const seedAll = async () => {
     await seedThreads();
     console.log("\n THREADS SEEDED \n");
 
-    // process.exit(0);
+    process.exit(0);
   } catch (err) {
     console.log(err);
   }
