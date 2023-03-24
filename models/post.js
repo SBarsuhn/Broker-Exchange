@@ -35,10 +35,6 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    thread: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
     closed_date: {
         type: DataTypes.DATEONLY,
         allowNull: true,
