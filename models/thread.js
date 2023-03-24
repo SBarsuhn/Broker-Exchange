@@ -15,9 +15,9 @@ Thread.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    thread_offer: {
+    counter_offer: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     user_id: {
         type: DataTypes.INTEGER,
