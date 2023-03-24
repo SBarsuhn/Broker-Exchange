@@ -32,4 +32,4 @@ Thread.belongsTo(User, {
 
 
 
-module.exports = { User, Post, Categories, Thread };
+module.exports = { User, Post, Category, Thread };
