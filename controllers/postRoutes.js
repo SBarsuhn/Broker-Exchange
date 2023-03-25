@@ -13,7 +13,7 @@ router.get('/', checkLogin, async (req, res) => {
         })
 })
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
 
 
@@ -21,11 +21,11 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.loggedIn = true;
             res.status(200).json({ 
-                name: varName, 
-                description: varDescription,
-                address: varAddress,
-                time_frame: varTimeFrame,
-                request: varRequest,
+                // name: varName, 
+                // description: varDescription,
+                // address: varAddress,
+                // time_frame: varTimeFrame,
+                // request: varRequest,
             });
         });
     } catch (err) {
