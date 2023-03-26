@@ -23,20 +23,22 @@ router.post('/', async (req, res) => {
 //route for logging in with an existing user
 router.post('/login', async (req, res) => {
     try {
+        console.log(req.body);
         const validUser = await User.findOne({
             where: {
-                email: req.body.email,
+                username: req.body.username,
+                password: req.body.password
             },
         });
 
         if (!validUser) {
-            res.status(400).json({message: 'Incorrect email or password.'});
+            res.status(400).json({message: 'Incorrect username or password.'});
             return;
         }
 
         const validPass = await validUser.checkPassword(req.body.password);
         if (!validPass) {
-            res.status(400).json({message: 'Incorrect email or password.'});
+            res.status(400).json({message: 'Incorrect username or password.'});
             return;
         }
 
