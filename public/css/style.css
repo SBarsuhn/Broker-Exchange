@@ -1,4 +1,9 @@
 :root {
+    /* background-image: url(../images/blob-scene-haikei\ \(26\).svg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
     background-color: rgb(204, 204, 204);
     font-family: 'Roboto Mono', monospace;
     
@@ -105,6 +110,7 @@
     border-style:solid;
     border-radius: 20px;
     border-color: rgb(247, 91, 49);
+    background-color: rgb(204, 204, 204);
     box-shadow: 5px 5px 5px rgb(78, 78, 78);
 }
 
@@ -116,4 +122,54 @@
 
 .post-need {
     padding-top: 15px;
+}
+
+.create-container {
+    width: 100%;
+    height: 100%;
+}
+
+.create-post {
+    margin: 20px;
+    background-color: rgb(204, 204, 204);
+    border-style: solid;
+    border-color: rgb(247, 91, 49);
+    border-radius: 20px;
+}
+
+.create-body {
+    padding: 20px;
+
+}
+
+.post-input {
+    border-radius: 10px;
+}
+
+.create-button {
+    background-color: rgb(247, 91, 49);
+    color: rgb(204, 204, 204);
+    border-radius: 10px;
+    margin-top: 35px !important;
+    border-color: transparent;
+    border-style:solid;
+    
+}
+
+.create-button:hover {
+  background-color: rgb(204, 204, 204) !important;
+  border-color: rgb(247, 91, 49) !important;
+  color: rgb(247, 91, 49) !important;
+  border-style:solid;
+}
+.create-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(204, 204, 204);
+   background-color: rgb(247, 91, 49);
+   font-size: 40px;
 }
