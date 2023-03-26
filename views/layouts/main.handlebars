@@ -10,17 +10,18 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Broker Exchange!</h1>
+        <h1 class="site-header">BROK(ER) EXCHANGE</h1>
       {{#if logged_in}}
-      <div class="w3-top">
-        <div class="w3-bar w3-black">
-            <a href="/views/homepage.handlebars" class="w3-bar-item w3-button w3-mobile">Community Forum</a>
-            <a href="/views/" class="w3-bar-item w3-button w3-mobile">Make A Post</a>
-            <a href="/views/" class="w3-bar-item w3-button w3-mobile">My Profile</a>
-            <a href="#" class="w3-bar-item w3-button w3-mobile">Logout</a>
+      <div>
+        <div class="w3-bar navbar">
+            <a href="/views/homepage.handlebars" class="w3-bar-item w3-button w3-mobile navbar-item">Community Forum</a>
+            <a href="/views/" class="w3-bar-item w3-button w3-mobile navbar-item">Make A Post</a>
+            <a href="/views/" class="w3-bar-item w3-button w3-mobile navbar-item">My Profile</a>
+            <a href="#" class="w3-bar-item w3-button w3-mobile navbar-item">Logout</a>
         </div>
     </div>
-        <a href="/views/homepage.handlebars">Community Forum</a> |
+     <header class="recent-posts">RECENT POSTS</header>
+        
         {{else}}
         <p>Please login to view or post exchanges.</p>
         <!-- renders the login modal pop up -->

@@ -1,6 +1,7 @@
 :root {
     background-color: rgb(204, 204, 204);
     font-family: 'Roboto Mono', monospace;
+    
 }
 
 .site-header {
@@ -8,6 +9,7 @@
     color: rgb(204, 204, 204);
     margin: 0px;
     padding:10px;
+    font-weight: bolder;
 }
 
 .navbar {
@@ -17,7 +19,7 @@
     font-style: bolder !important;
 }
 
-a:hover {
+.navbar-item:hover {
     background-color: rgb(247, 91, 49) !important;
     color: rgb(204, 204, 204) !important;
 }
@@ -36,7 +38,7 @@ a:hover {
 .login-input {
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: bolder;
     border-style: none;
     
@@ -73,10 +75,20 @@ a:hover {
     color: black !important;
 }
 
+.recent-posts {
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(204, 204, 204);
+   background-color: rgb(247, 91, 49);
+   font-size: 40px;
+}
+
 .post-container {
     display: flex;
     width: 100%;
-    height:100%
+    height:100%;
 }
 
 .post-header {
@@ -96,7 +108,12 @@ a:hover {
     box-shadow: 5px 5px 5px rgb(78, 78, 78);
 }
 
-.post-body {
-   padding:15px
+.post-body, .post-need, .post-date {
+   padding-left:15px;
+   padding-right:15px;
+   padding-bottom:15px;
+}
 
+.post-need {
+    padding-top: 15px;
 }
