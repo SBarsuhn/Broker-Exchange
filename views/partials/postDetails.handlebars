@@ -1,16 +1,17 @@
 <div>
-    <header recent>RECENT POSTS</header>
+    {{!-- <header recent>RECENT POSTS</header> --}}
+        <header>RECENT POSTS</header>
     <div class="post-container">
         <div class="post">
             <div class="post-header">
-            <div class="post-user">{{user.aliasName}}</div>
-                <div class="post-title">{{post.title}}</div>
+            <div class="post-user">{{aliasName}}</div>
+                <div class="post-title">{{title}}</div>
             </div>
-            <div class="post-need">{{post.need}}</div>
+            <div class="post-need">{{need}}</div>
             <div class="post-body">
-               {{post.post}}
+               {{post}}
             </div>
-            <div class="post-date">{{post.post_date}}</div>
+            <div class="post-date">{{post_date}}</div>
         </div>
     </div>
 </div>
