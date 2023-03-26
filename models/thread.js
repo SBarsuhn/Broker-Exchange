@@ -23,14 +23,14 @@ Thread.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: "user",
-            key: "id",
+            model: 'User',
+            key: 'id',
         },
     },
     post_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'post',
+            model: 'Post',
             key: 'id',
         },
     },
