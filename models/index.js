@@ -21,20 +21,20 @@ Thread.belongsTo(User, {
 });
 
 Post.hasOne(Category, {
-  foreignKey: "post_id",
+  foreignKey: "user_id",
 });
 
-Category.hasMany(Post, {
-  foreignKey: "post_id",
-});
+// Category.hasMany(Post, {
+//   foreignKey: "user_id",
+// });
 
-Post.hasMany(Thread, {
-  foreignKey: 'post_id',
-});
+// Post.hasMany(Thread, {
+//   foreignKey: 'user_id',
+// });
 
-Thread.belongsTo(Post, {
-  foreignKey: 'post_id',
-});
+// Thread.belongsTo(Post, {
+//   foreignKey: 'user_id',
+// });
 
 
 
