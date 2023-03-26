@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/user');
 const Post = require('../models/post');
 const Thread = require('../models/thread');
+const Category = require('../models/category');
 const checkLogin = require('../utils/auth');
 
 // router.get('/', checkLogin, async (req, res) => {
@@ -47,7 +48,11 @@ router.get('/', async (req, res) => {
                     {
                         model: Thread,
                         attributes: ['thread', 'thread_offer', 'user_id']
-                    }
+                    },
+                    {
+                        model: Category,
+                        attributes: ['category']
+                    },
                 ]
             });
             const posts = communityData.map((post) =>
