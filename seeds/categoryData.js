@@ -2,43 +2,43 @@ const Category = require('../models/category');
 
 const categoryData = [
 {
-    "category": "Lost and Found"
+    category: "Lost and Found"
 },
 {
-    "category": "Food"
+    category: "Food"
 },
 {
-    "category": "Drinks/Water"
+    category: "Drinks/Water"
 },
 {
-    "category": "Baby Supplies"
+    category: "Baby Supplies"
 },
 {
-    "category": "Furniture"
+    category: "Furniture"
 },
 {
-    "category": "Rides"
+    category: "Rides"
 },
 {
-    "category": "Planning"
+    category: "Planning"
 },
 {
-    "category": "Building"
+    category: "Building"
 },
 {
-    "category": "Tutor"
+    category: "Tutor"
 },
 {
-    "category": "Moving"
+    category: "Moving"
 },
 {
-    "category": "Babysit"
+    category: "Babysit"
 },
 {
-    "category": "Housesit"
+    category: "Housesit"
 },
 {
-    "category": "Walk Pets"
+    category: "Walk Pets"
 },
 ];
 
