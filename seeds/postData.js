@@ -2,7 +2,7 @@ const { Post } = require("../models");
 
 const postData = [
   {
-    user_id: "1",
+    user_id: 1,
     title: "Need Help Today",
     offer: "Will give a box of bananas",
     need: "Need transportation to ER",
@@ -11,7 +11,7 @@ const postData = [
     category_id: 1,
   },
   {
-    user_id: "2",
+    user_id: 2,
     title: "Need Help Tomorrow",
     offer: "Will give a gift of box of Chocolates",
     need: "Need help reviewing my essay for College Admissions",
@@ -20,7 +20,7 @@ const postData = [
     category_id: 2,
   },
   {
-    user_id: "3",
+    user_id: 3,
     title: "Need help next week",
     offer: "Will give a box of bananas",
     need: "Need transportation to ER",
@@ -29,7 +29,7 @@ const postData = [
     category_id: 3,
   },
   {
-    user_id: "4",
+    user_id: 4,
     title: "Need help in the evening today",
     offer: "Will give a fresh baked apple pie",
     need: "Need help moving new furniture from one room to another",

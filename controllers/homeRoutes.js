@@ -40,14 +40,14 @@ router.get('/', async (req, res) => {
         try {
             const communityData = await Post.findAll({
                 include: [
-                    // {
-                    //     model: User,
-                    //     attributes: ['aliasName']
-                    // },
-                    // {
-                    //     model: Thread,
-                    //     attributes: ['thread', 'thread_offer', 'user_id']
-                    // }
+                    {
+                        model: User,
+                        attributes: ['aliasName']
+                    },
+                    {
+                        model: Thread,
+                        attributes: ['thread', 'thread_offer', 'user_id']
+                    }
                 ]
             });
             const posts = communityData.map((post) =>
@@ -55,9 +55,7 @@ router.get('/', async (req, res) => {
             );
             res.render('homepage', {
                 posts,
-                // aliasName: User.aliasName,
-                aliasName: 'test',
-                loggedIn: req.session.loggedIn,
+                // loggedIn: req.session.loggedIn,
             })
         } catch (err) {
             console.log(err);
