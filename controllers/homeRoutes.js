@@ -41,18 +41,18 @@ router.get('/', async (req, res) => {
         try {
             const communityData = await Post.findAll({
                 include: [
-                    // {
-                    //     model: User,
-                    //     attributes: ['aliasName']
-                    // },
-                    // {
-                    //     model: Thread,
-                    //     attributes: ['thread', 'thread_offer', 'user_id']
-                    // },
-                    // {
-                    //     model: Category,
-                    //     attributes: ['category']
-                    // },
+                    {
+                        model: User,
+                        attributes: ['aliasName']
+                    },
+                    {
+                        model: Thread,
+                        attributes: ['thread', 'thread_offer', 'user_id']
+                    },
+                    {
+                        model: Category,
+                        attributes: ['category']
+                    },
                 ]
             });
             const posts = communityData.map((post) =>

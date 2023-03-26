@@ -16,25 +16,25 @@
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="email" type="text" placeholder="Enter Email">
+              <input class="w3-input w3-border" name="email" type="text" id="email-signup" placeholder="Enter Email">
             </div>
         </div>
         
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="username" type="text" placeholder="Enter Username">
+              <input class="w3-input w3-border" name="username" type="text" id="username-signup" placeholder="Enter Username">
             </div>
         </div>
         
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border" name="password" type="text" placeholder="Enter Password">
+              <input class="w3-input w3-border" name="password" type="text" id="password-signup" placeholder="Enter Password">
             </div>
         </div>
         
-        <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding w3-round-xxlarge">Create Account</button>
+        <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding w3-round-xxlarge" id="signup-form">Create Account</button>
 
         <div class="w3-container w3-center">
             <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large w3-round-xxlarge w3-ripple">Already A User? Click Here!</button>
@@ -50,10 +50,10 @@
                 <form class="w3-container" action="/action_page.php">
                   <div class="w3-section">
                     <label><b>Username</b></label>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="username" required>
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" id="username-login" placeholder="Enter Username" name="username" required>
                     <label><b>Password</b></label>
-                    <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="password" required>
-                    <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+                    <input class="w3-input w3-border" type="password" id="password-login" placeholder="Enter Password" name="password" required>
+                    <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit" id="login-form">Login</button>
                     <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
                   </div>
                 </form>
@@ -69,6 +69,7 @@
         <p class="w3-center">Already Have An Account? Click Here</p>
         
         </form>
+        <script src="./js/login.js"></script>
 </body>
 </html>
 
