@@ -12,19 +12,12 @@ const seedAll = async () => {
 
     await seedCategories();
     console.log("\n CATEGORIES SEEDED \n");
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> e4d1f09a10465134f655a75b1ba7d02386f4f101
     await seedUsers();
     console.log("\n USERS SEEDED \n");
+    
     await seedPosts();
     console.log("\n POSTS SEEDED \n");
-<<<<<<< HEAD
-    
-=======
->>>>>>> e4d1f09a10465134f655a75b1ba7d02386f4f101
 
     await seedThreads();
     console.log("\n THREADS SEEDED \n");
