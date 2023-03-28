@@ -12,7 +12,7 @@ const login = async (event) => {
         });
 
         if (response.ok) {
-            console.log('++++++++++++++++++++++++++++++++' + x.message + '++++++++++++++++++++++++++++++++++')
+            // console.log('++++++++++++++++++++++++++++++++' + x.message + '++++++++++++++++++++++++++++++++++')
             document.location.replace('/')
         } else {
             const x = await response.json()
