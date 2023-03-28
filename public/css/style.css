@@ -17,6 +17,14 @@
     font-weight: bolder;
 }
 
+.create-acc-header {
+    background-color: rgb(247, 91, 49);
+    padding: 10px;
+    color: rgb(204, 204, 204);
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
 .navbar {
     border-style: solid;
     border-color: rgb(247, 91, 49);
@@ -40,7 +48,7 @@
 }
 
 
-.login-input {
+.login-input, .create-input {
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
