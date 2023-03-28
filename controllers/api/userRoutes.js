@@ -35,37 +35,28 @@ router.post("/login", async (req, res) => {
       },
     });
 
-    // const validUser = await User.findOne({
-    //   where: {
-    //     aliasname: req.body.aliasname,
-    //     password: req.body.password,
-    //   },
-    // });
+        if (!validUser) {
+            res.status(400).json({message: 'Incorrect username'});
+            return;
+        }
 
-    if (!validUser) {
-      res.status(400).json({ message: "Incorrect username or password." });
-      return;
+
+        const validPass = await validUser.checkPassword(req.body.password);
+        if (!validPass) {
+            res.status(400).json({message: 'Incorrect password'});
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.user_id = validUser.id;
+            req.session.loggedIn = true;
+            res.status(200).json({ user: validUser, message: 'You are logged in.'});
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
     }
-
-    const validPass = await validUser.checkPassword(req.body.password);
-    if (!validPass) {
-      res
-        .status(400)
-        .json({ message: "Incorrect password, please try again." });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.user_id = validUser.id;
-      req.session.loggedIn = true;
-
-      res.status(200).json({ user: validUser, message: "You are logged in." });
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+  });
 
 //logout route
 router.post("/logout", async (req, res) => {
