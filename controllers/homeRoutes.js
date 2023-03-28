@@ -23,7 +23,11 @@ router.get('/', async (req, res) => {
                     {
                         model: Thread,
                         attributes: ['thread', 'counter_offer', 'user_id']
-                    }
+                    },
+                    {
+                        model: Category,
+                        attributes: ['category']
+                    },
                 ]
             });
             const posts = communityData.map((post) =>
