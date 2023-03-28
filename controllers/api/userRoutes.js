@@ -1,16 +1,14 @@
 const router = require("express").Router();
-const User = require("../../models/user");
-
+const { User } = require("../../models");
 
 // route for creating a new user login
 router.post("/", async (req, res) => {
   try {
     const userDB = await User.create({
-      aliasname: req.body.aliasname,
+      aliasName: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
-
     req.session.save(() => {
       req.session.user_id = userDB.id;
       req.session.loggedIn = true;
@@ -26,6 +24,12 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     console.log(req.body);
+    const validUser = await User.findOne({
+      where: {
+        aliasName: req.body.username,
+        password: req.body.password,
+      },
+    });
 
     const validUser = await User.findOne({
       where: {
@@ -33,7 +37,6 @@ router.post("/login", async (req, res) => {
         password: req.body.password,
       },
     });
-
 
     if (!validUser) {
       res.status(400).json({ message: "Incorrect username or password." });
@@ -54,8 +57,6 @@ router.post("/login", async (req, res) => {
 
       res.status(200).json({ user: validUser, message: "You are logged in." });
     });
-    
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
