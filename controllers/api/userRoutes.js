@@ -2,22 +2,26 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 // route for creating a new user login
-router.post("/", async (req, res) => {
-  try {
-    const userDB = await User.create({
-      aliasName: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    });
-    req.session.save(() => {
-      req.session.user_id = userDB.id;
-      req.session.loggedIn = true;
-      res.status(200).json(userDB);
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+
+router.post('/', async (req, res) => {
+    try {
+        const userDB = await User.create({
+            aliasName: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
+        });
+        req.session.save(() => {
+            req.session.user_id = userDB.id;
+            req.session.loggedIn = true;
+            res.status(200).json(userDB);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+
 });
 
 //route for logging in with an existing user
