@@ -181,3 +181,14 @@
    background-color: rgb(247, 91, 49);
    font-size: 40px;
 }
+
+#toggle-password {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+#toggle-password:active {
+    color: rgb(247, 91, 49)
+}

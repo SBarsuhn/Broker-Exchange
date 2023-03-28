@@ -20,7 +20,8 @@
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
             <div class="w3-rest">
-              <input class="w3-input w3-border create-input" name="password" type="text" id="password-signup" placeholder="Password">
+              <input class="w3-input w3-border create-input"  type="password" name="password" type="text" id="password-signup" placeholder="Password" >
+  <button id="toggle-password" type="button"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M396 512a112 112 0 1 0 224 0 112 112 0 1 0-224 0zm546.2-25.8C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 0 0 0 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM508 688c-97.2 0-176-78.8-176-176s78.8-176 176-176 176 78.8 176 176-78.8 176-176 176z"></path></svg></button>
             </div>
         </div>
         
@@ -54,6 +55,23 @@
           </div>
         </div>
       </div>
+              <script>const passwordInput = document.getElementById('password-signup');
+const togglePasswordButton = document.getElementById('toggle-password');
+
+togglePasswordButton.addEventListener('click', togglePassword);
+
+function togglePassword() {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    togglePasswordButton.setAttribute('aria-label',
+      'Hide password.');
+  } else {
+    passwordInput.type = 'password';
+    togglePasswordButton.setAttribute('aria-label',
+      'Show password as plain text. ' +
+      'Warning: this will display your password on the screen.');
+  }
+}</script>
         {{!-- <script src="./js/login.js"></script> --}}
 </body>
 
