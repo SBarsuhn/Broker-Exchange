@@ -27,7 +27,7 @@ const userData = [
     last_name: "LuckyCharms",
     aliasName: "Marshmellows",
     email: "TeddyLuckyCharms@comcast.com",
-    password: "password12345",
+    password: "password12349",
   },
 ];
 const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});
