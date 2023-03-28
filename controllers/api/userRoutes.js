@@ -7,7 +7,9 @@ router.post('/', async (req, res) => {
         const userDB = await User.create({
             aliasName: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
         });
         req.session.save(() => {
             req.session.user_id = userDB.id;
