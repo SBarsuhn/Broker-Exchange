@@ -35,12 +35,12 @@ router.post("/login", async (req, res) => {
       },
     });
 
-    const validUser = await User.findOne({
-      where: {
-        aliasname: req.body.aliasname,
-        password: req.body.password,
-      },
-    });
+    // const validUser = await User.findOne({
+    //   where: {
+    //     aliasname: req.body.aliasname,
+    //     password: req.body.password,
+    //   },
+    // });
 
     if (!validUser) {
       res.status(400).json({ message: "Incorrect username or password." });
