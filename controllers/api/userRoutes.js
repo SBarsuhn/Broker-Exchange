@@ -1,7 +1,8 @@
-const router = require('express').Router();
-const { User }  = require('../../models');
+const router = require("express").Router();
+const { User } = require("../../models");
 
 // route for creating a new user login
+
 router.post('/', async (req, res) => {
     try {
         const userDB = await User.create({
@@ -20,18 +21,19 @@ router.post('/', async (req, res) => {
         console.log(err);
         res.status(500).json(err)
     }
+
 });
 
 //route for logging in with an existing user
-router.post('/login', async (req, res) => {
-    try {
-        console.log(req.body);
-        const validUser = await User.findOne({
-            where: {
-                aliasName: req.body.username,
-                password: req.body.password
-            },
-        });
+router.post("/login", async (req, res) => {
+  try {
+    console.log(req.body);
+    const validUser = await User.findOne({
+      where: {
+        aliasName: req.body.username,
+        password: req.body.password,
+      },
+    });
 
         if (!validUser) {
             res.status(400).json({message: 'Incorrect username'});
@@ -53,17 +55,17 @@ router.post('/login', async (req, res) => {
         console.log(err);
         res.status(500).json(err)
     }
-});
+  });
 
 //logout route
-router.post('/logout', async (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end()
-        });
-    } else {
-        res.status(404).end()
-    }
-})
+router.post("/logout", async (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;

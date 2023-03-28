@@ -26,7 +26,7 @@ User.init(
         },
         aliasName: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         email: {
             type: DataTypes.STRING,
