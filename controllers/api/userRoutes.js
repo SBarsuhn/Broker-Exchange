@@ -31,7 +31,6 @@ router.post("/login", async (req, res) => {
     const validUser = await User.findOne({
       where: {
         aliasName: req.body.username,
-        password: req.body.password,
       },
     });
 
@@ -39,6 +38,7 @@ router.post("/login", async (req, res) => {
             res.status(400).json({message: 'Incorrect username'});
             return;
         }
+
 
         const validPass = await validUser.checkPassword(req.body.password);
         if (!validPass) {
