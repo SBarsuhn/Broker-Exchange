@@ -24,17 +24,17 @@ Post.hasOne(Category, {
   foreignKey: "user_id",
 });
 
-// Category.hasMany(Post, {
-//   foreignKey: "user_id",
-// });
+Category.hasMany(Post, {
+  foreignKey: "user_id",
+});
 
-// Post.hasMany(Thread, {
-//   foreignKey: 'user_id',
-// });
+Post.hasMany(Thread, {
+  foreignKey: 'user_id',
+});
 
-// Thread.belongsTo(Post, {
-//   foreignKey: 'user_id',
-// });
+Thread.belongsTo(Post, {
+  foreignKey: 'user_id',
+});
 
 
 
