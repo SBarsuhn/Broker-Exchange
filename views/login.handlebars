@@ -64,11 +64,11 @@ togglePasswordButton.addEventListener('click', togglePassword);
 function togglePassword() {
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
-    togglePasswordButton.setAttribute('Roboto Mono',
+    togglePasswordButton.setAttribute('aria-label',
       'Hide password.');
   } else {
     passwordInput.type = 'password';
-    togglePasswordButton.setAttribute('Roboto Mono',
+    togglePasswordButton.setAttribute('aria-label',
       'Show password as plain text. ');
   }
 }</script>
