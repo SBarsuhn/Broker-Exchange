@@ -34,13 +34,13 @@ router.post('/login', async (req, res) => {
         });
 
         if (!validUser) {
-            res.status(400).json({message: 'Incorrect username or password.'});
+            res.status(400).json({message: 'Incorrect username'});
             return;
         }
 
         const validPass = await validUser.checkPassword(req.body.password);
         if (!validPass) {
-            res.status(400).json({message: 'Incorrect username or password.'});
+            res.status(400).json({message: 'Incorrect password'});
             return;
         }
 
