@@ -14,7 +14,7 @@
     <h3>Current Posts:</h3>
 
     {{#each posts as |post|}}
-    <div class="w3-container w3-center">
+    <div class="w3-container w3-center thread-div">
       <div class="w3-container w3-center">
         <h4><a href="/profile/{{post.id}}">{{post.title}}</a></h4>
       </div>
@@ -24,5 +24,6 @@
     </div>
     {{/each}}
   </div>
+  <script src="./js/thread.js"></script>
   {{/if}}
 </div>
