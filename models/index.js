@@ -3,6 +3,7 @@ const Post = require("./post");
 const Category = require("./category");
 const Thread = require("./thread");
 
+// Adding associations to the models
 User.hasMany(Post, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
