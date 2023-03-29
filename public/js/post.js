@@ -1,16 +1,16 @@
 const post = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('#post-name').value.trim();
-    const description = document.querySelector('#post-description').value.trim();
-    const address = document.querySelector('#post-address').value.trim();
-    const timeframe = document.querySelector('#post-timeframe').value.trim();
+    const title = document.querySelector('#post-title').value.trim();
+    const post = document.querySelector('#post-post').value.trim();
+    const need = document.querySelector('#post-need').value.trim();
+    const close_date = document.querySelector('#post-close_date').value.trim();
     const offer = document.querySelector('#post-offer').value.trim();
 
-    if (username && password) {
-        const response = await fetch('/api/users/login', {
+    if (title && post && need && close_date && offer ) {
+        const response = await fetch('/post', {
             method: 'POST',
-            body: JSON.stringify({ username, description, address, timeframe, offer }),
+            body: JSON.stringify({ title, post, need, close_date, offer }),
             headers: { 'Content-Type': "application/json" },
         });
 
@@ -24,30 +24,5 @@ const post = async (event) => {
     }
 }
 
-const signup = async (event) => {
-    event.preventDefault();
 
-    const email = document.querySelector('#email-signup').value.trim();
-    const username = document.querySelector('#username-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-    const firstName = document.querySelector('#firstname-signup').value.trim();
-    const lastName = document.querySelector('#lastname-signup').value.trim();
-
-
-    if (email && username && password) {
-        const response = await fetch('/api/users', {
-            method: 'POST',
-            body: JSON.stringify({ email, username, password, firstName, lastName }),
-            headers: { 'Content-Type': "application/json" },
-        });
-
-        if (response.ok) {
-            document.location.replace('/')
-            // document.querySelector('#resultText').innerText = ` -- Logged in as ${username} -- `;
-        } else {
-            alert('Failed to sign up')
-        }
-    }
-}
-
-document.querySelector('#login-form').addEventListener('submit', post);
+document.querySelector('#post-form').addEventListener('submit', post);

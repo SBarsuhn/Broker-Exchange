@@ -9,23 +9,34 @@ router.get('/', checkLogin, async (req, res) => {
     attributes: { exclude: ['password']}
 })
 try {
-    const userData = await Post.findAll({
+//   const userInfo = await User.findOne({
+//     where: { id: loggedUser.id },
+ 
+// });
+// const user = userInfo.get({ plain:true });
+
+    const postData = await Post.findAll({
         where: { user_id: loggedUser.id },
         include: [
             {
                 model: User,
-                attributes: ['aliasName'],
+                attributes: ['aliasName', 'email'],
             },
         ],
     });
-    const posts = userData.map((post) =>
+    const posts = postData.map((post) =>
         post.get({ plain:true })
     );
 
 
     res.render('profile', {
-      userData,
+      // user,
+      postData,
       posts,
+      aliasName: loggedUser.aliasName,
+      email: loggedUser.email,
+      // aliasName: user.aliasName,
+      // email: user.email,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
