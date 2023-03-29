@@ -47,5 +47,22 @@ const signup = async (event) => {
     }
 }
 
+const passwordInput = document.getElementById('password-signup');
+const togglePasswordButton = document.getElementById('toggle-password');
+
+togglePasswordButton.addEventListener('click', togglePassword);
+
+function togglePassword() {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    togglePasswordButton.setAttribute('aria-label',
+      'Hide password.');
+  } else {
+    passwordInput.type = 'password';
+    togglePasswordButton.setAttribute('aria-label',
+      'Show password as plain text. ');
+  }
+}
+
 document.querySelector('#login-form').addEventListener('submit', login);
 document.querySelector('#signup-form').addEventListener('submit', signup);
