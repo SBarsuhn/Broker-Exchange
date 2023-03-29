@@ -10,23 +10,23 @@ const seedThreads = require("./threadData");
 const seedAll = async () => {
   try {
     await sequelize.sync({ force: true });
-    log(chalk.red.bgBlue("\n DATABASE SYNCED \n"));
+    log(chalk.red.bgBlue("\n ----------------------DATABASE SYNCED---------------------- \n"));
 
     await seedCategories();
-    log(chalk.cyan.bgBlack("\n CATEGORIES SEEDED \n"));
+    log(chalk.cyan.bgBlack("\n ----------------------CATEGORIES SEEDED---------------------- \n"));
 
     await seedUsers();
-    log(chalk.blue.bgMagenta("\n USERS SEEDED \n"));
+    log(chalk.blue.bgMagenta("\n ----------------------USERS SEEDED---------------------- \n"));
 
     await seedPosts();
-    log(chalk.greenBright.bgBlack("\n POSTS SEEDED \n"));
+    log(chalk.greenBright.bgBlack("\n ----------------------POSTS SEEDED---------------------- \n"));
 
     await seedThreads();
-    log(chalk.yellow.bgRed("\n THREADS SEEDED \n"));
+    log(chalk.yellow.bgRed("\n ----------------------THREADS SEEDED---------------------- \n"));
 
     process.exit(0);
   } catch (err) {
-    log(chalk.black.bgRed(err));
+    log(chalk.black.underline.bgRed(err));
   }
 };
 
