@@ -42,32 +42,37 @@
 }
 
 .card {
-    background-image: url(../images/modal-BG.svg);
+    background-image: url(../images/modal-BGI.svg);
+    background-position: center;
     border-radius: 20px;
     font-weight: bolder;
 }
 
 
-.login-input, .create-input {
+.login-input, .create-input, .post-input {
     border-radius: 10px;
     background-color: #eed5b1;
     color: rgb(0, 0, 0);
     font-weight: bolder;
-    border-style: none;
+    border-color: #0d5f4d !important;
+    border-width: 2px !important;
+    border-style: solid;
     
 }
 
 .login-button {
     border-radius: 10px;
     margin-top: 35px !important;
-    border-color: transparent;
+    background-color: #0d5f4d;
+    color:#eed5b1;
+    border-color: #eed5b1;
     border-style:solid
 }
 
 .login-button:hover {
-  background-color: #0d5f4d !important;
-  border-color:#eed5b1 !important;
-  color:#eed5b1 !important;
+  background-color: #eed5b1 !important;
+  border-color:#0d5f4d !important;
+  color:#0d5f4d !important;
   border-style:solid;
 }
 
@@ -80,6 +85,7 @@
 }
 
 .close-modal:hover {
+    color:#0d5f4d !important;
     background-color: transparent !important;
     transform: rotate(360deg);
 }
@@ -141,9 +147,9 @@
 
 .create-post {
     margin: 20px;
-    background-color:#eed5b1;
+    border-color:#eed5b1;
     border-style: solid;
-    border-color: #0d5f4d;
+    background-color: #0d5f4d;
     border-radius: 20px;
 }
 
@@ -173,6 +179,7 @@
   border-style:solid;
 }
 .create-header {
+    padding-top: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-weight: bolder;
