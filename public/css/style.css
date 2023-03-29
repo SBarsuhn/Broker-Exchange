@@ -15,6 +15,13 @@
     font-weight: bolder;
 }
 
+.welcome {
+    float: right;
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
 .create-acc-header {
     background-color: #0d5f4d;
     padding: 10px;
