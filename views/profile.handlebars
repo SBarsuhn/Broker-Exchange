@@ -1,5 +1,5 @@
-<div class="w3-container w3-center profile-head">
-        <h3>My Profile</h3>
+<div class="w3-center">
+        <header class="profile-header">MY PROFILE</header>
       </div>
       
       <div class="w3-container w3-center profile-usr">
@@ -11,15 +11,16 @@
 
        {{#if posts.length}}
   <div class="w3-container w3-center profile-hist">
-    <h3>Current Posts:</h3>
+    <p>CURRENT POSTS</p>
 
     {{#each posts as |post|}}
-    <div class="w3-container w3-center thread-div">
+
+    <div class="w3-container w3-center thread-div post-hist">
       <div class="w3-container w3-center">
-        <h4><a href="/profile/{{post.id}}">{{post.title}}</a></h4>
+        <p><a href="/profile/{{post.id}}">{{post.title}}</a></p>
       </div>
       <div class="w3-container w3-center">
-        <button class="w3-button w3-block w3-green w3-section w3-padding" data-id="{{id}}">DELETE</button>
+        <button class="w3-button w3-block w3-section w3-padding delete-button" data-id="{{id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
