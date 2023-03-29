@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
             post: req.body.post,
             need: req.body.need,
             post_date: getTime,
-            category_id: 1,
+            category_id: req.body.category,
             close_date: req.body.close_date,
             offer: req.body.offer,
         });
