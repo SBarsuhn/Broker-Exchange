@@ -11,17 +11,19 @@
 <body>
     <header>
         <h1 class="site-header">BROK(ER) EXCHANGE</h1>
+        {{!-- If the user is logged in they will be brought directly to the homepage and will be able t oview the navbar --}}
       {{#if loggedIn}}
+        <h1 class="site-header welcome">WELCOME, {{first_name}}</h1>
       <div>
         <div class="w3-bar navbar">
             <a href="/" class="w3-bar-item w3-button w3-mobile navbar-item">Community Forum</a>
             <a href="/post" class="w3-bar-item w3-button w3-mobile navbar-item">Make A Post</a>
-            <a href="/profile" class="w3-bar-item w3-button w3-mobile navbar-item">My Profile</a>
+            <a href="/profile" class="w3-bar-item w3-button w3-mobile navbar-item">Profile</a>
             <a id="logout" class="w3-bar-item w3-button w3-mobile navbar-item">Logout</a>
         </div>
     </div>
      
-        
+        {{!-- If they aren't logged in thet will be redirected to to login/create account page and the navbar will be replaced with this header --}}
         {{else}}
         <header class="site-header">Please login or make an account to view or post exchanges.</header>
           </div>
@@ -29,7 +31,7 @@
       </div>
         {{/if}}  
     </header>
-    <!-- renders the sub layout -->
+    <!-- renders the sub layout. For example  -->
     <main>
       {{{body}}}
     </main>
@@ -37,6 +39,7 @@
     <footer>
 
     </footer>
+    {{!-- Tells the application to use the code in logout.js --}}
     <script src="./js/logout.js"></script>
 </body>
 </html>
