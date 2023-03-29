@@ -1,5 +1,6 @@
 const { Post } = require("../models");
 
+// Creating Post seed data
 const postData = [
   {
     title: "Need Help Today",

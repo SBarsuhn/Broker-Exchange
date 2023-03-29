@@ -6,6 +6,7 @@ const seedPosts = require("./postData");
 const seedCategories = require("./categoryData");
 const seedThreads = require("./threadData");
 
+// Taking seed data files and combining the console log with Chalk and then running function to seed data for models
 const seedAll = async () => {
   try {
     await sequelize.sync({ force: true });

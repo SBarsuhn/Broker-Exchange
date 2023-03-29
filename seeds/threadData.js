@@ -1,5 +1,6 @@
 const Thread = require("../models/thread");
 
+// Creating Thread seed data
 const postThread = [
   {
     thread: "I really want to help. I accept your offer.",
