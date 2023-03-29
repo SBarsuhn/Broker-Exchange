@@ -1,3 +1,4 @@
+//environment variables and sequelize/jawsdb
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

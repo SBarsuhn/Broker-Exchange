@@ -1,3 +1,4 @@
+//renders the login page - post for logging in and creating users is under api/users
 const router = require('express').Router();
 const { User } = require('../models')
 

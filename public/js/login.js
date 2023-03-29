@@ -1,3 +1,4 @@
+//script for checking the login info against the db - api/users/login
 const login = async (event) => {
     event.preventDefault();
 
@@ -12,15 +13,15 @@ const login = async (event) => {
         });
 
         if (response.ok) {
-            // console.log('++++++++++++++++++++++++++++++++' + x.message + '++++++++++++++++++++++++++++++++++')
             document.location.replace('/')
         } else {
             const x = await response.json()
-            console.log('++++++++++++++++++++++++++++++++' + x.message + '++++++++++++++++++++++++++++++++++')
+            console.log(x.message)
         }
     }
 }
 
+//script for creating a new user - api/users
 const signup = async (event) => {
     event.preventDefault();
 

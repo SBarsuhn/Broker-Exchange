@@ -1,3 +1,4 @@
+//script used on profile page to allow delete of personal posts - profileRoutes.js, /profile
 const removePost = async (event) => {
     event.preventDefault();
 
@@ -17,6 +18,7 @@ const removePost = async (event) => {
         }
     }
 
+//cycles through all "each" instances of a post on the profile page and creates a click listener for the associated delete button
 const deleteButtons = document.querySelectorAll('.post-delete');
 deleteButtons.forEach(btn => {
     btn.addEventListener('click', removePost)

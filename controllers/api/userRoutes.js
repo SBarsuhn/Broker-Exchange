@@ -1,3 +1,4 @@
+//create user, login, and logout routes
 const router = require("express").Router();
 const { User } = require("../../models");
 
