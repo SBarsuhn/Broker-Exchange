@@ -1,4 +1,6 @@
 const path = require('path');
+const chalk = require('./utils/chalk');
+const log = console.log;
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -39,6 +41,6 @@ app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
-        console.log(`listening on http://localhost:${PORT}`)
+        log(chalk.greenBright.bold.bgMagenta(`Listening on http://localhost:${PORT}`))
     })
-})
+});

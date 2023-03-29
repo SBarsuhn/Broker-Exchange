@@ -1,5 +1,4 @@
 const sequelize = require("../config/connection");
-// const chalk = require("chalk");
 const chalk = require('../utils/chalk');
 const log = console.log;
 const seedUsers = require("./userData");
