@@ -32,7 +32,7 @@ Post.init(
       allowNull: true,
     },
     post_date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {

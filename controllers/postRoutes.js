@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Post } = require('../models');
+const getTime = require('../utils/time');
 const checkLogin = require('../utils/auth')
 
 router.get('/', checkLogin, async (req, res) => {
@@ -15,23 +16,24 @@ router.get('/', checkLogin, async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-
-
-
+        const postDB = await Post.create({
+            user_id: req.session.user_id,
+            title: req.body.title,
+            post: req.body.post,
+            need: req.body.need,
+            post_date: getTime,
+            category_id: 1,
+            close_date: req.body.close_date,
+            offer: req.body.offer,
+        });
         req.session.save(() => {
-            req.session.loggedIn = true;
-            res.status(200).json({ 
-                // name: varName, 
-                // description: varDescription,
-                // address: varAddress,
-                // time_frame: varTimeFrame,
-                // request: varRequest,
-            });
+            res.status(200).json(postDB);
         });
     } catch (err) {
         console.log(err);
         res.status(500).json(err)
     }
+
 });
 
 module.exports = router;
