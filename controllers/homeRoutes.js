@@ -38,4 +38,23 @@ router.get("/", checkLogin, async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+      const threadDB = await Thread.create({
+          user_id: req.session.user_id,
+          thread: req.body.thread,
+          post_id: req.body.post_id,
+          post_date: getTime,
+          counter_offer: req.body.counter_offer,
+      });
+      req.session.save(() => {
+          res.status(200).json(threadDB);
+      });
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err)
+  }
+
+});
+
 module.exports = router;

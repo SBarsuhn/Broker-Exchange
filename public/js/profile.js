@@ -21,5 +21,3 @@ const deleteButtons = document.querySelectorAll('.post-delete');
 deleteButtons.forEach(btn => {
     btn.addEventListener('click', removePost)
 })
-
-// document.querySelectorAll('.post-delete').addEventListener('click', removePost);

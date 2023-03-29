@@ -35,7 +35,6 @@ try {
 });
 
 router.delete('/', async (req, res) => {
-
   try {
   Post.destroy({
       where: { id: req.body.post_id}
