@@ -15,6 +15,13 @@
     font-weight: bolder;
 }
 
+.welcome {
+    float: right;
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+
 .create-acc-header {
     background-color: #0d5f4d;
     padding: 10px;
@@ -23,7 +30,7 @@
     font-weight: bolder;
 }
 
-.navbar {
+.navbar, .thread-cont {
     border-style: solid;
     border-color: #0d5f4d;
     color: #0d5f4d;
@@ -47,7 +54,7 @@
 }
 
 
-.login-input, .create-input, .post-input {
+.login-input, .create-input, .post-input, .thread-input {
     border-radius: 10px;
     background-color: #eed5b1;
     color: rgb(0, 0, 0);
@@ -58,7 +65,7 @@
     
 }
 
-.login-button, .delete-button {
+.login-button, .delete-button, .thread-button {
     border-radius: 10px;
     margin-top: 35px !important;
     background-color: #0d5f4d;
@@ -163,7 +170,7 @@
     height: 100%;
 }
 
-.create-post {
+.create-post, .add-thread {
     margin: 20px;
     border-color:#eed5b1;
     border-style: solid;

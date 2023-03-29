@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 
 class Thread extends Model {}
 
+// Creating a Thread model
 Thread.init(
 {
     id:{

@@ -1,5 +1,6 @@
 const Category = require('../models/category');
 
+// Creating Category seed data
 const categoryData = [
 {
     category: "Lost and Found"
