@@ -1,8 +1,9 @@
+//route for rendering the logged in user profile page
 const router = require('express').Router();
 const { User, Post } = require('../models');
 const checkLogin = require('../utils/auth')
 
-
+//renders page that includes only the posts of the logged in user using information from the session id
 router.get('/', checkLogin, async (req, res) => {
   const loggedUser = await User.findOne({
     where: { id: req.session.user_id },
@@ -34,6 +35,7 @@ try {
   }
 });
 
+//posts a user makes can be deleted from their profile page
 router.delete('/', async (req, res) => {
   try {
   Post.destroy({

@@ -1,8 +1,10 @@
+//routes for the dedicated screen for creating new posts
 const router = require('express').Router();
 const { User, Post } = require('../models');
 const getTime = require('../utils/time');
 const checkLogin = require('../utils/auth')
 
+//renders the post page
 router.get('/', checkLogin, async (req, res) => {
     const loggedUser = await User.findOne({
         where: {id: req.session.user_id},
@@ -14,6 +16,7 @@ router.get('/', checkLogin, async (req, res) => {
         })
 })
 
+//takes field input to create a new post - automatically timestamps dayjs helper in utils
 router.post('/', async (req, res) => {
     try {
         const postDB = await Post.create({

@@ -1,3 +1,4 @@
+//script for creating a new post - passes to postRoutes, /post
 const post = async (event) => {
     event.preventDefault();
 
@@ -16,10 +17,10 @@ const post = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/post')
+            document.location.replace('/')
         } else {
             const x = await response.json()
-            console.log('++++++++++++++++++++++++++++++++' + x.message + '++++++++++++++++++++++++++++++++++')
+            console.log(x.message)
         }
     }
 }

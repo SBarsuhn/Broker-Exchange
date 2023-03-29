@@ -1,9 +1,11 @@
+//route for rendering the community/homepage and posting a thread(comment) on a post
 const router = require("express").Router();
 const getTime = require('../utils/time');
 const { User, Post, Category, Thread } = require("../models");
 
 const checkLogin = require("../utils/auth");
 
+//renders homepage
 router.get("/", checkLogin, async (req, res) => {
   const loggedUser = await User.findOne({
     where: { id: req.session.user_id },
@@ -38,6 +40,7 @@ router.get("/", checkLogin, async (req, res) => {
   }
 });
 
+//creates a new thread based on user input on homepage
 router.post('/', async (req, res) => {
   try {
       const threadDB = await Thread.create({
