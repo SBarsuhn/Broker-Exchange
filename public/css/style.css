@@ -48,7 +48,7 @@
 }
 
 
-.login-input, .create-input {
+.login-input, .create-input, .post-input {
     border-radius: 10px;
     background-color: #eed5b1;
     color: rgb(0, 0, 0);
@@ -141,9 +141,9 @@
 
 .create-post {
     margin: 20px;
-    background-color:#eed5b1;
+    border-color:#eed5b1;
     border-style: solid;
-    border-color: #0d5f4d;
+    background-color: #0d5f4d;
     border-radius: 20px;
 }
 
@@ -173,6 +173,7 @@
   border-style:solid;
 }
 .create-header {
+    padding-top: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-weight: bolder;
