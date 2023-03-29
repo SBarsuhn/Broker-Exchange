@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const getTime = require('../utils/time');
 const { User, Post, Category, Thread } = require("../models");
 
 const checkLogin = require("../utils/auth");
