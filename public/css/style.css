@@ -273,6 +273,7 @@
 }
 
  .thread-header{
+    padding:15px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border-style: solid;
@@ -281,6 +282,10 @@
     color: #eed5b1;
     font-weight: bold;
     width: 100%; 
+}
+
+.thread-comment, .thread-counteroffer {
+    padding-left: 15px;
 }
 
 
