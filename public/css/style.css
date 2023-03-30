@@ -30,7 +30,7 @@
     font-weight: bolder;
 }
 
-.navbar, .thread-cont {
+.navbar {
     border-style: solid;
     border-color: #0d5f4d;
     color: #0d5f4d;
@@ -53,6 +53,20 @@
     font-weight: bolder;
 }
 
+.comment-card {
+    background-image: url(../images/modal-BGI.svg);
+    background-position:bottom;
+    border-radius: 20px;
+    font-weight: bolder;
+}
+
+.modal-header {
+    font-weight: bolder;
+    margin-bottom: 55px;
+    color: #0d5f4d;
+
+}
+
 
 .login-input, .create-input, .post-input, .thread-input {
     border-radius: 10px;
@@ -72,6 +86,13 @@
     color:#eed5b1;
     border-color: #eed5b1;
     border-style:solid
+}
+
+.thread-button:hover {
+    background-color: #eed5b1 !important;
+    border-color:#0d5f4d !important;
+    color:#0d5f4d !important;
+    border-style:solid;
 }
 
 .login-button:hover {
@@ -122,7 +143,7 @@
     height:100%;
 }
 
-.post-header {
+.post-header{
     color:#eed5b1;
     font-weight: bolder;
     background-color: #0d5f4d;
@@ -187,7 +208,7 @@
     border-radius: 10px;
 }
 
-.create-button {
+.create-button, .add-thread {
     background-color: #0d5f4d;
     color:#eed5b1;
     border-radius: 10px;
@@ -196,6 +217,12 @@
     border-style:solid;
     
 }
+.add-thread:hover {
+    background-color:#eed5b1 !important;
+    border-color: #0d5f4d !important;
+    color: #0d5f4d !important;
+    border-style:solid;
+  }
 
 .create-button:hover {
   background-color:#eed5b1 !important;
@@ -203,7 +230,7 @@
   color: #0d5f4d !important;
   border-style:solid;
 }
-.create-header {
+.create-header{
     padding-top: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
