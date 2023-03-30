@@ -92,6 +92,7 @@ router.post('/', async (req, res) => {
       req.session.save(() => {
         req.session.postpost = true;
           res.status(200).json(threadDB);
+          req.session.postpost = false;
       });
   } catch (err) {
       console.log(err);

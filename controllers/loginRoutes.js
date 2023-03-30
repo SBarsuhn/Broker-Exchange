@@ -17,6 +17,9 @@ router.get('/', async (req, res) => {
             loggedIn: req.session.loggedIn,
             postpost: req.session.postpost,
         });
+        req.session.save(() => {
+            req.session.postpost = false;
+        });
         } else {
             req.session.save(() => {
                 req.session.postpost = false;
@@ -24,6 +27,9 @@ router.get('/', async (req, res) => {
             res.render('login', {
                 loggedIn: req.session.loggedIn,
                 postpost: req.session.postpost,
+            });
+            req.session.save(() => {
+                req.session.postpost = false;
             });
         }
     } catch (err) {

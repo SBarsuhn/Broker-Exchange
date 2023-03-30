@@ -34,6 +34,9 @@ try {
       loggedIn: req.session.loggedIn,
       postpost: req.session.postpost,
     });
+    req.session.save(() => {
+        req.session.postpost = false;
+    });
   } catch (err) {
     res.status(404).json(err);
   }
@@ -50,6 +53,10 @@ router.delete('/', async (req, res) => {
       console.log(err);
       res.status(500).json(err)
   };
+
+  req.session.save(() => {
+    req.session.postpost = false;
+});
 })
 
 module.exports = router;

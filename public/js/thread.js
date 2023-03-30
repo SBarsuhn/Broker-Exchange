@@ -45,6 +45,7 @@ const postThread = async (event) => {
 }
 
 
+
 const postThreadBtn = document.querySelectorAll('.thread-start-btn');
 postThreadBtn.forEach(btn => {
     btn.addEventListener('click', startThread)

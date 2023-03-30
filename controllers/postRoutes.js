@@ -17,12 +17,14 @@ router.get('/', checkLogin, async (req, res) => {
         res.render('post', {
             aliasName: loggedUser.aliasName,
             loggedIn: req.session.loggedIn,
+
             postpost: req.session.postpost,
         });
     } catch (err) {
         console.log(err);
         res.status(500).json(err)
     }
+
 })
 
 //takes field input to create a new post - automatically timestamps dayjs helper in utils
@@ -41,6 +43,7 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.postpost = true;
             res.status(200).json(postDB);
+            req.session.postpost = true;
         });
     } catch (err) {
         console.log(err);
