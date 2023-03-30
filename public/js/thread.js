@@ -7,7 +7,7 @@ const thread = async (event) => {
     const post_id = event.target.getAttribute('data-id');
 
     if (thread) {
-        const response = await fetch('/homepage', {
+        const response = await fetch('/', {
             method: 'POST',
             body: JSON.stringify({ thread, counter_offer, post_id }),
             headers: { 'Content-Type': "application/json" },
@@ -22,4 +22,4 @@ const thread = async (event) => {
     }
 }
 
-document.querySelector('.thread-div').addEventListener('click', thread);
+document.querySelector('#thread-post-btn').addEventListener('click', thread);

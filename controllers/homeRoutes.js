@@ -31,6 +31,8 @@ router.get("/", checkLogin, async (req, res) => {
     const posts = communityData.map((post) => post.get({ plain: true }));
     res.render("homepage", {
       posts,
+      thread: communityData.thread,
+      counter_offer: communityData.counter_offer,
       first_name: loggedUser.first_name,
       aliasName: loggedUser.aliasName,
       loggedIn: req.session.loggedIn,

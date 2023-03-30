@@ -17,10 +17,10 @@
 
     <div class="w3-container w3-center post-delete post-hist">
       <div class="w3-container w3-center">
-        <p><a href="/profile/{{post.id}}">{{post.title}}</a></p>
+        <p>{{post.title}}</p>
       </div>
       <div class="w3-container w3-center">
-        <button class="w3-button w3-block w3-section w3-padding delete-button" data-id="{{id}}">DELETE</button>
+        <button class="w3-button w3-block w3-section w3-padding delete-button" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
