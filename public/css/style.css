@@ -15,6 +15,13 @@
     font-weight: bolder;
 }
 
+.post-suc {
+    color: #eed5b1;
+    background-color: #0d5f4d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 .welcome {
     float: right;
     position:absolute;
