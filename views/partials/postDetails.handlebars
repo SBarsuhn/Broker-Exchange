@@ -10,7 +10,10 @@
                {{post}}
             </div>
             <div class="post-date">{{post_date}}</div>
-        
+              
+              {{#each threads as |threads|}}
+              {{>threadDetails}}
+              {{/each}}
 
 
              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button add-thread">Add A Comment</button>
