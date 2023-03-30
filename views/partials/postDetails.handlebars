@@ -10,27 +10,42 @@
                {{post}}
             </div>
             <div class="post-date">{{post_date}}</div>
+        
+        <div class="thread-container">
+            <div class="w3-card thread-post">
+            <h3 id="for Jason" class="thread-header">this will render aliasname of user making post</h3>
+            <div class="w3-card">
+            <p class="thread-comment" id="for Jason">This will render the comment</p>
+            <p class="thread-counteroffer" id="for Jason" >this will render the Counter offer</p>
+            </div>
+            </div>
+                </div>
+
              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button add-thread">Add A Comment</button>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
+  <div id="id01" class="w3-modal modal-background">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom comment-card">
       <header class="w3-container w3-center thread-cont"> 
         <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright">&times;</span>
-        <h2>Add A Comment To This Post</h2>
+        class="w3-button w3-xlarge w3-display-topright close-modal">&times;</span>
+        <h2 class="modal-header">Add A Comment To This Post</h2>
       </header>
       <div class="w3-container">
         <input class="w3-input w3-border w3-margin-bottom thread-input" id="counter-text" type="text" placeholder="Any Counter Offer?">
         <input class="w3-input w3-border w3-margin-bottom thread-input" id="thread-text" type="text" placeholder="Do You Want To Help With This Offer? Enter Your Comment Here.">
         </div>
+<<<<<<< HEAD
       <footer class="w3-container w3-center thread-cont" id="thread-post-btn">
         <button class="w3-button w3-block thread-button w3-section w3-padding"  type="submit" data-id="{{id}}">Add Comment</button>
         <p>Broker Exchange</p>
+=======
+      <footer class="w3-container w3-center thread-cont">
+        <button class="w3-button w3-block thread-button w3-section w3-padding"  type="submit">Add Comment</button>
+>>>>>>> 8c8ffffdb857497c0b6422c70c571470512395fb
       </footer>
     </div>
   </div>
 </div>
-            <p>cheese</p>
         </div>
     </div>
 </div>
