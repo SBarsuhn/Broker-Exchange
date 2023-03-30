@@ -32,6 +32,12 @@ const hbs = exphbs.create({});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+  //   Handlebars.registerHelper('isMatching', function(postID, threadID, options){
+  //     if (postID === threadID) {
+  //         return options.fn(this);
+  //     }
+  //     return options.inverse(this);
+  // })
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));

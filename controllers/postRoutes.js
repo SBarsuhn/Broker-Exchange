@@ -9,14 +9,20 @@ router.get('/', checkLogin, async (req, res) => {
     const loggedUser = await User.findOne({
         where: {id: req.session.user_id},
         attributes: {exclude: ['password']}
-    })
+    });
+    try {
+        req.session.save(() => {
+            req.session.postpost = false;
+        });
         res.render('post', {
             aliasName: loggedUser.aliasName,
             loggedIn: req.session.loggedIn,
+            postpost: req.session.postpost,
         });
-        req.session.save(() => {
-            req.session.postpost = false;
-        })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
 })
 
 //takes field input to create a new post - automatically timestamps dayjs helper in utils
@@ -33,14 +39,13 @@ router.post('/', async (req, res) => {
             offer: req.body.offer,
         });
         req.session.save(() => {
-            res.status(200).json(postDB);
             req.session.postpost = true;
+            res.status(200).json(postDB);
         });
     } catch (err) {
         console.log(err);
         res.status(500).json(err)
     }
-
 });
 
 module.exports = router;
