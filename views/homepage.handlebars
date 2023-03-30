@@ -1,6 +1,8 @@
 <header class="recent-posts">RECENT POSTS</header>
-<header class="w3-animate-left w3-center post-suc">THIS IS A SPOT TO PUT THE POST NOTIFICATION</header>
+{{#if postpost}}
+<header class="w3-animate-left w3-center post-suc">Post successful!</header>
 {{!-- This is a loop to desplay all posts on the main page --}}
+{{/if}}
 {{#each posts as |post|}}
 {{>postDetails}}
 {{/each}}

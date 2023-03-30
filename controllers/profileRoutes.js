@@ -30,6 +30,9 @@ try {
       email: loggedUser.email,
       loggedIn: req.session.loggedIn,
     });
+    req.session.save(() => {
+        req.session.postpost = false;
+    });
   } catch (err) {
     res.status(404).json(err);
   }
@@ -45,7 +48,10 @@ router.delete('/', async (req, res) => {
   } catch (err) {
       console.log(err);
       res.status(500).json(err)
-  }
+  };
+  req.session.save(() => {
+    req.session.postpost = false;
+});
 })
 
 module.exports = router;

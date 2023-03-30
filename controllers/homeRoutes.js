@@ -36,6 +36,7 @@ router.get("/", checkLogin, async (req, res) => {
       first_name: loggedUser.first_name,
       aliasName: loggedUser.aliasName,
       loggedIn: req.session.loggedIn,
+      postpost: req.session.postpost,
     });
   } catch (err) {
     console.log(err);
@@ -55,6 +56,7 @@ router.post('/', async (req, res) => {
       });
       req.session.save(() => {
           res.status(200).json(threadDB);
+          req.session.postpost = false;
       });
   } catch (err) {
       console.log(err);
