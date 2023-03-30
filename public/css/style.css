@@ -167,7 +167,7 @@
 }
 
 
-.post {
+.post, .thread-post {
     margin: 20px;
     border-style:solid;
     border-radius: 20px;
@@ -176,7 +176,7 @@
     box-shadow: 5px 5px 5px rgb(78, 78, 78);
 }
 
-.post-body, .post-need, .post-date {
+.post-body, .post-need, .post-date, .thread-counteroffer, .thread-comment {
    padding-left:15px;
    padding-right:15px;
    padding-bottom:15px;
