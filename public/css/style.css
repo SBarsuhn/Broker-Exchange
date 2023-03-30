@@ -144,7 +144,7 @@
    font-size: 40px;
 }
 
-.post-container {
+.post-container{
     display: flex;
     width: 100%;
     height:100%;
@@ -174,7 +174,7 @@
 }
 
 
-.post, .thread-post {
+.post{
     margin: 20px;
     border-style:solid;
     border-radius: 20px;
@@ -183,7 +183,7 @@
     box-shadow: 5px 5px 5px rgb(78, 78, 78);
 }
 
-.post-body, .post-need, .post-date, .thread-counteroffer, .thread-comment {
+.post-body, .post-need, .post-date{
    padding-left:15px;
    padding-right:15px;
    padding-bottom:15px;
@@ -271,6 +271,25 @@
     border-color: #eed5b1;
     margin:20px;
 }
+
+ .thread-header{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-style: solid;
+    border-color:#0d5f4d;
+    background-color: #0d5f4d;
+    color: #eed5b1;
+    font-weight: bold;
+    width: 100%; 
+}
+
+
+.thread-container {
+    border-color:#0d5f4d;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    border-bottom-style: solid;
+} 
 
 #signup-form {
     background-color: #0d5f4d;
