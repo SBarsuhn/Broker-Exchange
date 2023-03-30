@@ -1,4 +1,4 @@
-# Broker Exchange Website App [License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# Broker Exchange Website App ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
 
