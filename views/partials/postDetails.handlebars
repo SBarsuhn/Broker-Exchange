@@ -31,11 +31,13 @@
         <h2 class="modal-header">Add A Comment To This Post</h2>
       </header>
       <div class="w3-container">
-        <input class="w3-input w3-border w3-margin-bottom thread-input" id="For Jason" type="text" placeholder="Any Counter Offer?">
-        <input class="w3-input w3-border w3-margin-bottom thread-input" id="For Jason" type="text" placeholder="Do You Want To Help With This Offer? Enter Your Comment Here.">
+        <input class="w3-input w3-border w3-margin-bottom thread-input" id="counter-text" type="text" placeholder="Any Counter Offer?">
+        <input class="w3-input w3-border w3-margin-bottom thread-input" id="thread-text" type="text" placeholder="Do You Want To Help With This Offer? Enter Your Comment Here.">
         </div>
-      <footer class="w3-container w3-center thread-cont">
-        <button class="w3-button w3-block thread-button w3-section w3-padding"  type="submit">Add Comment</button>
+
+      <footer class="w3-container w3-center thread-cont" id="thread-post-btn">
+        <button class="w3-button w3-block thread-button w3-section w3-padding"  type="submit" data-id="{{id}}">Add Comment</button>
+        <p>Broker Exchange</p>
       </footer>
     </div>
   </div>
