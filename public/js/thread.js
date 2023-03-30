@@ -22,4 +22,9 @@ const thread = async (event) => {
     }
 }
 
-document.querySelector('#thread-post-btn').addEventListener('click', thread);
+// document.querySelector('#thread-post-btn').addEventListener('click', thread);
+
+const threadButtons = document.querySelectorAll('.thread-post-btn');
+threadButtons.forEach(btn => {
+    btn.addEventListener('click', thread)
+})

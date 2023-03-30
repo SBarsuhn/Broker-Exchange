@@ -13,9 +13,15 @@ router.get('/', async (req, res) => {
             username: userData.username,
             loggedIn: req.session.loggedIn,
         });
+        req.session.save(() => {
+            req.session.postpost = false;
+        });
         } else {
             res.render('login', {
                 loggedIn: req.session.loggedIn,
+            });
+            req.session.save(() => {
+                req.session.postpost = false;
             });
         }
     } catch (err) {
