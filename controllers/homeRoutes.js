@@ -20,7 +20,7 @@ router.get("/", checkLogin, async (req, res) => {
         },
         {
           model: Thread,
-          attributes: ["thread", "counter_offer", "user_id"],
+          attributes: ["thread", "counter_offer", "user_id", "id"],
         },
         {
           model: Category,
@@ -29,10 +29,30 @@ router.get("/", checkLogin, async (req, res) => {
       ],
     });
     const posts = communityData.map((post) => post.get({ plain: true }));
+
+    const threadData = await Thread.findAll({
+      // where: { post_id: communityData.id },
+      include: [
+        {
+          model: User,
+          attributes: ['aliasName'],
+        },
+        {
+          model: Post,
+          attributes: ["id"]
+        }
+      ],
+    });
+    const threads = threadData.map((thread) => 
+      thread.get({ plain:true })
+    )
+
+    
     res.render("homepage", {
       posts,
-      thread: communityData.thread,
-      counter_offer: communityData.counter_offer,
+      threads,
+      threadID: threadData.post_id,
+      postID: communityData.id,
       first_name: loggedUser.first_name,
       aliasName: loggedUser.aliasName,
       loggedIn: req.session.loggedIn,
@@ -44,19 +64,34 @@ router.get("/", checkLogin, async (req, res) => {
   }
 });
 
+
+router.post('/updatePostID', async (req, res) => {
+
+  try {
+      req.session.save(() => {
+        req.session.postIDHolder = req.body.post_id;
+          res.status(200).json();
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err)
+  }
+
+});
+
 //creates a new thread based on user input on homepage
 router.post('/', async (req, res) => {
   try {
       const threadDB = await Thread.create({
           user_id: req.session.user_id,
           thread: req.body.thread,
-          post_id: req.body.post_id,
+          post_id: req.session.postIDHolder,
           post_date: getTime,
           counter_offer: req.body.counter_offer,
       });
       req.session.save(() => {
+        req.session.postpost = true;
           res.status(200).json(threadDB);
-          req.session.postpost = false;
       });
   } catch (err) {
       console.log(err);

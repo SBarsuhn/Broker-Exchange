@@ -9,19 +9,21 @@ router.get('/', async (req, res) => {
             where: { id: req.session.user_id },
             attributes: { exclude: ['password']}
         })
-        res.render('login', {
-            username: userData.username,
-            loggedIn: req.session.loggedIn,
-        });
         req.session.save(() => {
             req.session.postpost = false;
         });
+        res.render('login', {
+            username: userData.username,
+            loggedIn: req.session.loggedIn,
+            postpost: req.session.postpost,
+        });
         } else {
-            res.render('login', {
-                loggedIn: req.session.loggedIn,
-            });
             req.session.save(() => {
                 req.session.postpost = false;
+            });
+            res.render('login', {
+                loggedIn: req.session.loggedIn,
+                postpost: req.session.postpost,
             });
         }
     } catch (err) {
